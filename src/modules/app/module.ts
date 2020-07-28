@@ -8,10 +8,13 @@ import { DeviceRepository } from './repositories/device';
 import { UserRepository } from './repositories/user';
 import { AuthService } from './services/auth';
 import { UserService } from './services/user';
+import { ITemController } from './controllers/item';
+import { ITemService } from './services/item';
+import { ITemRepository } from './repositories/item';
 
 @Module({
   imports: [HttpModule, CommonModule, DatabaseModule],
-  controllers: [AuthController, ProfileController],
-  providers: [AuthService, UserService, UserRepository, DeviceRepository]
+  controllers: [AuthController, ProfileController, ITemController],
+  providers: [AuthService, UserService, ITemService, UserRepository, DeviceRepository, ITemRepository]
 })
 export class AppModule {}
