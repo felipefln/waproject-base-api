@@ -21,7 +21,6 @@ export class ITemRepository {
   }
 
   public async list(params: IPaginationParams, transaction?: Transaction): Promise<Page<ITem>> {
-    console.log('teste');
     let query = ITem.query(transaction)
       .select('*')
       .page(params.page, params.pageSize);
